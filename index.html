@@ -1,34 +1,40 @@
 <head>
   <link rel="icon" type="image/x-icon" href="https://pipe.miroware.io/5f586dbe02740c4a7fb69f99/Ididart/Symbol.png" />
   <title> Flare's Portfolio </title>
+  <meta property="og:title" content="Flare's Portfolio" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://flaringk.github.io/Portfolio" />
+  <meta property="og:image" content="https://pipe.miroware.io/5f586dbe02740c4a7fb69f99/Ididart/Icon.png" />
+  <meta property="og:description" content="The Portfolio of FlaringK" />
+  <meta name="theme-color" content="#c74061">
   <script src="https://kit.fontawesome.com/a3a9f9f421.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  // Add smooth scrolling to all links
-  $("a").on('click', function(event) {
+  <script>
+  $(document).ready(function(){
+    // Add smooth scrolling to all links
+    $("a").on('click', function(event) {
 
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
+      // Make sure this.hash has a value before overriding default behavior
+      if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
 
-      // Store hash
-      var hash = this.hash;
+        // Store hash
+        var hash = this.hash;
 
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function(){
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function(){
 
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
+        });
+      } // End if
+    });
   });
-});
-</script>
+  </script>
   <style>
   @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap');
 
