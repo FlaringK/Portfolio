@@ -227,15 +227,15 @@ p {
   background-size: auto 78%;
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  display: none;
-  opacity: 0.5;
-  transition: opacity 0.5s;
+  opacity: 0;
   z-index: 2;
+  transition: opacity 0.5s;
+  pointer-events: none
 }
 
 #gallery input:checked ~ label .imgview {
-  display: block;
   opacity: 1;
+  pointer-events: auto;
 }
 
 /* web port */
