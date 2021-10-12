@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap');
+
+html {scroll-behavior: smooth}
+
+:root {
+  --colora: #C74061;
+  --colorb: #FF7F27;
+  --colorc: yellow;
+}
+
+body {
+  color: white;
+  font-family: 'Rubik', sans-serif;
+  background-size: 40px 40px;
+  background-color: black;
+  background-image:
+    linear-gradient(to right, var(--colora) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--colora) 1px, transparent 1px);
+  animation: bodymove 28s linear infinite;
+  overflow-x: hidden;
+  padding-bottom: 160px;
+}
+    
+    #home {padding-top: 120px;}
+
+@keyframes bodymove {
+  from {background-position: 0% 0%;}
+  to {background-position: 100% 200%;}
+}
+
+#bggrid2 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: black;
+  opacity: 0.5;
+  z-index: -1;
+  background-size: 80px 80px;
+  background-image:
+    linear-gradient(to right, var(--colora) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--colora) 1px, transparent 1px);
+  animation: divmove 45s linear infinite;
+}
+
+@keyframes divmove {
+  from {background-position: 10% -10%;}
+  to {background-position: 110% -110%;}
+}
+
+.content {
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+  /*
+  outline: solid red 1px;
+  */
+}
+
+h1 {
+  font-size: 6em;
+  margin-bottom: 80px;
+}
+
+h2, h1, #gallery {
+  animation: fadeInLeft 2s;  
+}
+
+@keyframes fadeInLeft {
+  0% {opacity:0;
+    transform: translate(50%)}
+  100% {opacity:1;
+    transform: translate(0%)}
+}
+
+@keyframes fadeInUp {
+  0% {opacity:0;
+    transform: translate(0, 50%)}
+  100% {opacity:1;
+    transform: translate(0, 0%)}
+}
+
+.button {
+  --overcolor: var(--colorb);
+  color: var(--overcolor);
+  width: max-content;
+  border: solid var(--overcolor);
+  border-radius: 5px;
+  padding: 0.5em;
+  width: 80px;
+  text-align: center;
+  animation: fadeInLeft 2s both;
+  animation-delay: 0.2s;
+  ;
+  position: absolute;
+  top: 325px;
+  left: calc(var(--loc) * 120px);
+}
+
+.button:hover {
+  --overcolor: var(--colorc);
+}
+
+.button a {
+  color: var(--overcolor);
+  text-decoration: none;
+}
+
+a {
+  color: var(--colorb);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--colorc);
+}
+
+p {
+  animation: fadeInLeft 2s both;
+  animation-delay: 0.3s;
+}
+
+/* nav bar */
+
+#navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: black;
+  text-align: center;
+  padding: 20px 0 10px 0;
+}
+
+.navbutton {
+  color: var(--overcolor);
+  margin: 0 0.25em 10px 0.25em;
+  display: inline-block;
+  width: 240px;
+  border: solid;
+  border-radius: 8px;
+  font-size: 18px;
+  padding: 0.25em;
+  animation: fadeInUp 2s both;
+  transition: font-size 0.2s;
+}
+
+.navbutton:hover {
+  font-size: 20px;
+}
+
+/* gallery */
+
+#gallery {
+  text-align: center;
+}
+
+.galimg {
+  width: max-content;
+  display: inline-block;
+}
+
+#gallery label{
+  --img: url(https://pipe.miroware.io/5f586dbe02740c4a7fb69f99/Ididart/idk.png);
+  width: max-content;
+}
+
+#gallery input {
+  display: none;
+}
+
+.imgpreview {
+  display: inline-block;
+  min-height: 160px;
+  width: 200px;
+  margin: 0 5px;
+  background-image: var(--img);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  transition: width .2s;
+}
+
+.imgpreview:hover {
+  width: 220px;
+}
+
+.imgview {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 75px;
+  background: rgba(0,0,0,0.5);
+  background-image: var(--img);
+  background-size: auto 78%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 0.5s;
+  pointer-events: none
+}
+
+#gallery input:checked ~ label .imgview {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* web port */
+
+h3 {
+  margin-top: 0;
+}
+
+.webwrap {
+  background: black;
+  border: green solid 4px;
+  padding: 1em;
+  margin-bottom: 1em;
+  animation: fadeInLeft 2s both;
+  
+  display: grid; 
+  grid-auto-columns: 1fr; 
+  grid-template-columns: 2.5fr 1fr; 
+  grid-template-rows: 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "webtext webimg"; 
+  width: 100%; 
+}
+
+.webtext { grid-area: webtext; }
+.webimg { 
+  grid-area: webimg; 
+  text-align: center;
+}
+
+.webimg img {
+  max-width: 150px;
+  max-height: 150px;
+}
