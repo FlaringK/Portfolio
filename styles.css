@@ -19,6 +19,7 @@ body {
   animation: bodymove 28s linear infinite;
   overflow-x: hidden;
   padding-bottom: 160px;
+  image-rendering: pixelated;
 }
     
     #home {padding-top: 120px;}
