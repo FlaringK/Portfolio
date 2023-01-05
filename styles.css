@@ -95,7 +95,7 @@ h2, h1, #gallery {
   animation-delay: 0.2s;
   ;
   position: absolute;
-  top: 325px;
+  top: 1030px;
   left: calc(var(--loc) * 120px);
 }
 
